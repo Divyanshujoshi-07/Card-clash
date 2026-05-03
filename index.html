@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MEMORIA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Floating orbs background -->
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-deco">✦</div>
+    <h1 class="title">MEMORIA</h1>
+    <p class="tagline">The Art of Remembrance</p>
+    <div class="header-deco">✦</div>
+  </header>
+
+  <!-- Stats bar -->
+  <div class="stats-bar">
+    <div class="stat">
+      <span class="stat-label">Moves</span>
+      <span class="stat-value" id="moves">0</span>
+    </div>
+    <div class="stat-divider">◆</div>
+    <div class="stat">
+      <span class="stat-label">Pairs</span>
+      <span class="stat-value" id="pairs">0 / 8</span>
+    </div>
+    <div class="stat-divider">◆</div>
+    <div class="stat">
+      <span class="stat-label">Time</span>
+      <span class="stat-value" id="timer">0:00</span>
+    </div>
+    <div class="stat-divider">◆</div>
+    <div class="stat">
+      <span class="stat-label">Best</span>
+      <span class="stat-value" id="best">—</span>
+    </div>
+  </div>
+
+  <!-- Difficulty selector -->
+  <div class="difficulty-bar">
+    <button class="diff-btn active" data-pairs="6">Easy</button>
+    <button class="diff-btn" data-pairs="8">Medium</button>
+    <button class="diff-btn" data-pairs="10">Hard</button>
+  </div>
+
+  <!-- Game board -->
+  <main class="board" id="board" aria-label="Memory game board"></main>
+
+  <!-- Victory modal -->
+  <div class="modal-overlay" id="modal" aria-hidden="true">
+    <div class="modal">
+      <div class="modal-glyph">✧</div>
+      <h2 class="modal-title">Splendid!</h2>
+      <p class="modal-sub">All pairs revealed</p>
+      <div class="modal-stats">
+        <div class="modal-stat">
+          <span class="modal-stat-label">Moves</span>
+          <span class="modal-stat-value" id="final-moves">—</span>
+        </div>
+        <div class="modal-stat">
+          <span class="modal-stat-label">Time</span>
+          <span class="modal-stat-value" id="final-time">—</span>
+        </div>
+        <div class="modal-stat">
+          <span class="modal-stat-label">Score</span>
+          <span class="modal-stat-value" id="final-score">—</span>
+        </div>
+      </div>
+      <button class="btn-play" id="playAgainBtn">Play Again</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
